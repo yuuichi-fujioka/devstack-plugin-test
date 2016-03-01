@@ -1,0 +1,5 @@
+echo hello
+
+FOO=bar
+
+disable_all_services
