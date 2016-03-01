@@ -3,3 +3,5 @@ echo hello
 FOO=bar
 
 disable_all_services
+
+echo Hoge > /tmp/testsette
