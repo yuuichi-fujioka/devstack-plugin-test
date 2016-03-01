@@ -1,6 +1,11 @@
 echo hello
 
-FOO=bar
+FOO=${FOO:-aa, bb, cc}
+
+for i in $(echo $FOO | sed 's/,/ /g')
+do
+    echo $i
+done
 
 disable_all_services
 
