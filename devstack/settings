@@ -1,12 +1,20 @@
-echo hello
-
-FOO=${FOO:-aa, bb, cc}
-
-for i in $(echo $FOO | sed 's/,/ /g')
-do
-    echo $i
-done
-
 disable_all_services
 
-echo Hoge > /tmp/testsette
+enable_service keystone
+enable_service g-api
+enable_service g-reg
+enable_service swift
+enable_service mysql
+enable_service horizon
+enable_service rabbit
+
+DATABASE_PASSWORD=password
+SERVICE_TOKEN=password
+SERVICE_PASSWORD=password
+ADMIN_PASSWORD=password
+SWIFT_HASH=password
+RABBIT_PASSWORD=password
+
+GLANCE_BRANCH=stable/liberty
+KEYSTONE_BRANCH=stable/liberty
+SWIFT_BRANCH=stable/liberty
