@@ -10,3 +10,7 @@ done
 disable_all_services
 
 echo Hoge > /tmp/testsette
+
+echo -n "Say Hello! :"
+read INPUT_MSG
+echo $INPUT_MSG >> /tmp/testsette
