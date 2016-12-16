@@ -1,16 +1,31 @@
-echo hello
+DATABASE_PASSWORD=password
+SERVICE_TOKEN=password
+SERVICE_PASSWORD=password
+ADMIN_PASSWORD=password
+SWIFT_HASH=password
+RABBIT_PASSWORD=password
 
-FOO=${FOO:-aa, bb, cc}
+disable_service n-net
+enable_service q-svc
+enable_service q-agt
+enable_service q-dhcp
+enable_service q-l3
+enable_service q-meta
+enable_service neutron
+enable_service q-lbaas
+# enable_service q-fwaas
+enable_service q-vpn
 
-for i in $(echo $FOO | sed 's/,/ /g')
-do
-    echo $i
-done
+ALLOCATION_POOL="start=192.168.100.100,end=192.168.100.200"
+FIXED_RANGE=192.168.100.0/24
+NETWORK_GATEWAY=192.168.100.1
 
-disable_all_services
+Q_FLOATING_ALLOCATION_POOL="start=192.168.26.2,end=192.168.26.254"
+FLOATING_RANGE=192.168.26.0/24
+PUBLIC_NETWORK_GATEWAY=192.168.26.1
 
-echo Hoge > /tmp/testsette
-
-echo -n "Say Hello! :"
-read INPUT_MSG
-echo $INPUT_MSG >> /tmp/testsette
+Q_PLUGIN=ml2
+Q_ML2_TENANT_NETWORK_TYPE=vxlan
+ENABLE_TENANT_TUNNELS=True
+ENABLE_TENANT_VLANS=True
+TENANT_VLAN_RANGE=1000:9999
