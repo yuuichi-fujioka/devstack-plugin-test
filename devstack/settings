@@ -16,6 +16,8 @@ enable_service q-lbaas
 # enable_service q-fwaas
 enable_service q-vpn
 
+disable_service horizon
+
 ALLOCATION_POOL="start=192.168.100.100,end=192.168.100.200"
 FIXED_RANGE=192.168.100.0/24
 NETWORK_GATEWAY=192.168.100.1
