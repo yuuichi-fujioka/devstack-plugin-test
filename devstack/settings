@@ -3,6 +3,7 @@ SERVICE_TOKEN=password
 SERVICE_PASSWORD=password
 SWIFT_HASH=password
 RABBIT_PASSWORD=password
+ADMIN_PASSWORD=secret
 
 disable_service n-net
 enable_service q-svc
