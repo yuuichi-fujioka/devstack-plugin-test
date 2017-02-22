@@ -15,6 +15,7 @@ enable_service neutron
 enable_service q-lbaas
 # enable_service q-fwaas
 enable_service q-vpn
+enable_service swift
 
 disable_service horizon
 
