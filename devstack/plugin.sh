@@ -1,5 +1,5 @@
 function configure_log(){
-    for f in /etc/nova/nova.conf /etc/glance/glance-api.conf /etc/glance/glance-cache.conf /etc/glance/glance-registry.conf /etc/keystone/keystone.conf /etc/neutron/neutron.conf
+    for f in /etc/nova/nova.conf /etc/glance/glance-api.conf /etc/glance/glance-cache.conf /etc/glance/glance-registry.conf /etc/keystone/keystone.conf /etc/neutron/neutron.conf /etc/cinder/cinder.conf
     do
         iniset $f DEFAULT logging_exception_prefix ''
         iniset $f DEFAULT logging_debug_format_suffix 'from (pid=%(process)d) %(funcName)s %(pathname)s:%(lineno)d'
